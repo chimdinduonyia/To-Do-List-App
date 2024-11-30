@@ -1,0 +1,224 @@
+
+*{
+    font-family: "Outfit", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    color: #b72e13;
+    margin-bottom: 50px;
+    font-size: 45px;
+}
+
+marquee{
+    padding: 0;
+    margin: 0;
+}
+
+body, html{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+}
+
+.wrapper{
+    min-width: 300px;
+    padding: 30px 22px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 400px;
+    background-color: rgb(24, 24, 24);
+    box-shadow: 0px 16px 32px -16px #4b0d0d;
+}
+
+.add-todo{
+    padding-bottom: 30px;
+    border-bottom: 1px solid hsl(0, 0%, 15%);
+}
+
+.add-todo form{
+    display: flex;
+    gap: 20px;
+    height: 35px;
+    position: relative;
+}
+
+.notification-tooltip{
+    padding: 7px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 200;
+    background-color: #b72e13;
+    position: absolute;
+    bottom: 140%;
+    left: 10%;
+    opacity: 0%;
+    transition: 0.3s ease;
+}
+
+.notification-tooltip::after{
+    content: "";
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #b72e13 transparent transparent transparent;
+}
+
+#task-input{
+    outline: none;
+    background-color: transparent;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsl(0, 0%, 15%);
+    color: #fff;
+    padding-left: 10px;
+}
+
+#add-task-btn{
+    border: none;
+    padding-inline: 15px;
+    border-radius: 3px;
+    /* color: #fff; */
+    /* background-color: #b72e13; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    /* cursor: pointer; */
+    box-shadow: 0px 16px 30px -17px #000;
+    transition: 0.5s ease;
+}
+
+/* #add-task-btn:hover{
+    background-color: hsl(10, 81%, 50%);
+    background-color: rgb(14, 14, 206);
+} */
+
+.enabled{
+    color: #fff;
+    background-color: #b72e13;
+    cursor: pointer;
+}
+
+.enabled svg, .enabled svg g{
+    margin-top: 2px;
+    stroke: #fff;
+}
+
+.enabled:hover{
+    background-color: rgb(14, 14, 206);
+}
+
+.disabled{
+    color: #7c7c7c;
+    background-color: #d6d6d6;
+    cursor: not-allowed;
+}
+
+.disabled svg, .disabled svg g{
+    margin-top: 2px;
+    stroke: #7c7c7c;
+}
+
+
+#todo-list{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    /* gap: 15px; */
+}
+
+#list-backdrop{
+    text-align: center;
+    color: #202020;
+    font-size: 31px;
+}
+
+.todo-item{
+    padding: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1f1f1f;
+    /* background-color: #b72e13; */
+    /* background-color: hsl(0, 2%, 12%); */
+    /* box-shadow: 0px 16px 30px -17px #000; */
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.todo-item:hover{
+    border-color: #8a0b0b;
+}
+
+.todo-main{
+    display: flex;
+    flex-direction: row;
+}
+
+.todo-title{
+    font-size: 14px;
+    font-weight: 300;
+    color: #cecece;
+    margin-left: 10px;
+    flex-grow: 0;
+    max-width: 160px;
+    text-wrap: nowrap;
+    /* max-width: 25ch; */
+    overflow: hidden;
+    position: relative;
+}
+
+.strike-through{
+    background-color: #acacac;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 51%;
+    display: none;
+    /* transform: translateY(-50%); */
+}
+
+.controls button{
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.move-up svg g, .move-down svg g{
+    transition: 0.2s ease;
+}
+
+.move-up:hover svg g, .move-down:hover svg g{
+    color: #b72e13;
+    stroke: #b72e13;
+}
+
+.delete-task svg g{
+    /* font-weight: 300;
+    color: #b72e13; */
+    transition: 0.2s ease;
+}
+
+.delete-task:hover svg g{
+    stroke: hsl(10, 94%, 51%);
+}
+
+.todo-check, input[type="checkbox"]{
+    accent-color: #b72e13;
+    cursor: pointer;
+}
